@@ -7,15 +7,15 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "youssef.magdi@example.com",
-      link: "mailto:youssef.magdi@example.com",
+      value: "shalabyy420@gmail.com",
+      link: "mailto:shalabyy420@gmail.com",
       description: "Professional inquiries and collaborations"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/youssef-magdi",
-      link: "https://linkedin.com/in/youssef-magdi",
+      value: "linkedin.com/in/youssef-shalaby-45ab15244",
+      link: "https://linkedin.com/in/youssef-shalaby-45ab15244",
       description: "Professional network and career updates"
     },
     {
@@ -128,7 +128,7 @@ const ContactSection = () => {
                     <Button 
                       size="lg" 
                       className="bg-gradient-primary hover:shadow-accent transition-all duration-300 group w-full"
-                      onClick={() => window.location.href = 'mailto:youssef.magdi@example.com?subject=Professional Inquiry&body=Hello Youssef, I am interested in discussing...'}
+                      onClick={() => window.location.href = 'mailto:shalabyy420@gmail.com?subject=Professional Inquiry&body=Hello Youssef, I am interested in discussing...'}
                     >
                       <Send className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                       Send Email
@@ -138,7 +138,7 @@ const ContactSection = () => {
                       variant="outline" 
                       size="lg" 
                       className="hover:shadow-card transition-all duration-300 w-full"
-                      onClick={() => window.open('https://linkedin.com/in/youssef-magdi', '_blank')}
+                      onClick={() => window.open('https://linkedin.com/in/youssef-shalaby-45ab15244', '_blank')}
                     >
                       <Linkedin className="mr-2 h-5 w-5" />
                       Connect on LinkedIn

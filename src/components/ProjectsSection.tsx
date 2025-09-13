@@ -49,6 +49,44 @@ const ProjectsSection = () => {
       ],
       icon: TrendingUp,
       color: "accent"
+    },
+    {
+      title: "Customer Segmentation Analysis",
+      description: "Advanced customer segmentation project using Python and machine learning to identify high-value customer groups and predict churn.",
+      technologies: ["Python", "Pandas", "Scikit-learn", "Matplotlib", "SQL"],
+      features: [
+        "RFM analysis for customer segmentation",
+        "Churn prediction using machine learning",
+        "Customer lifetime value calculation",
+        "Behavioral pattern analysis",
+        "Automated customer scoring system"
+      ],
+      metrics: [
+        { label: "Customers Analyzed", value: "100K+" },
+        { label: "Churn Prediction Accuracy", value: "87%" },
+        { label: "Revenue Impact", value: "+23%" }
+      ],
+      icon: Database,
+      color: "primary"
+    },
+    {
+      title: "Financial Performance Analytics",
+      description: "Comprehensive financial analysis tool for tracking revenue, expenses, and profitability metrics with interactive visualizations.",
+      technologies: ["Tableau", "SQL", "Excel", "Power BI"],
+      features: [
+        "Multi-dimensional profit & loss analysis",
+        "Budget vs actual variance reporting",
+        "Cash flow forecasting models",
+        "Cost center performance tracking",
+        "Executive financial dashboards"
+      ],
+      metrics: [
+        { label: "Financial Models", value: "12" },
+        { label: "Forecast Accuracy", value: "92%" },
+        { label: "Reporting Time Reduction", value: "60%" }
+      ],
+      icon: TrendingUp,
+      color: "accent"
     }
   ];
 
@@ -75,78 +113,79 @@ const ProjectsSection = () => {
         </div>
 
         {/* Main Projects */}
-        <div className="space-y-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {projects.map((project, index) => (
-            <Card key={project.title} className={`p-8 bg-gradient-card shadow-elegant hover:shadow-accent transition-all duration-500 transform hover:-translate-y-2 animate-slide-up`} style={{ animationDelay: `${index * 0.2}s` }}>
-              <div className="grid lg:grid-cols-2 gap-8 items-start">
-                <div>
+            <Card key={project.title} className={`p-6 bg-gradient-card shadow-elegant hover:shadow-accent transition-all duration-500 transform hover:-translate-y-2 animate-slide-up flex flex-col h-full`} style={{ animationDelay: `${index * 0.1}s` }}>
+              <div className="flex flex-col h-full">
+                <div className="flex-1">
                   <div className="flex items-center mb-4">
-                    <div className={`p-3 ${project.color === 'primary' ? 'bg-primary/10' : 'bg-accent/10'} rounded-lg mr-4`}>
-                      <project.icon className={`h-8 w-8 ${project.color === 'primary' ? 'text-primary' : 'text-accent'}`} />
+                    <div className={`p-3 ${project.color === 'primary' ? 'bg-primary/10' : 'bg-accent/10'} rounded-lg mr-3`}>
+                      <project.icon className={`h-6 w-6 ${project.color === 'primary' ? 'text-primary' : 'text-accent'}`} />
                     </div>
                     <div>
-                      <h3 className="font-display font-semibold text-2xl text-foreground">
+                      <h3 className="font-display font-semibold text-xl text-foreground">
                         {project.title}
                       </h3>
-                      <div className="flex flex-wrap gap-2 mt-2">
-                        {project.technologies.map((tech, techIndex) => (
-                          <Badge key={techIndex} variant="secondary" className={`${project.color === 'primary' ? 'bg-primary/10 text-primary' : 'bg-accent/10 text-accent'}`}>
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
                     </div>
                   </div>
 
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech, techIndex) => (
+                      <Badge key={techIndex} variant="secondary" className={`text-xs ${project.color === 'primary' ? 'bg-primary/10 text-primary' : 'bg-accent/10 text-accent'}`}>
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
                     {project.description}
                   </p>
 
-                  <div className="space-y-3 mb-6">
-                    <h4 className="font-semibold text-foreground flex items-center">
+                  <div className="space-y-3 mb-4">
+                    <h4 className="font-semibold text-foreground flex items-center text-sm">
                       <Filter className="h-4 w-4 mr-2" />
                       Key Features
                     </h4>
-                    <ul className="space-y-2">
-                      {project.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start text-sm text-muted-foreground">
-                          <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <ul className="space-y-1">
+                      {project.features.slice(0, 3).map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start text-xs text-muted-foreground">
+                          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 mr-2 flex-shrink-0"></div>
                           {feature}
                         </li>
                       ))}
                     </ul>
                   </div>
-
-                  <div className="flex gap-3">
-                    <Button size="sm" className="bg-gradient-primary hover:shadow-accent">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      View Details
-                    </Button>
-                    <Button variant="outline" size="sm">
-                      <FileSpreadsheet className="h-4 w-4 mr-2" />
-                      Documentation
-                    </Button>
-                  </div>
                 </div>
 
-                <div className="space-y-4">
-                  <h4 className="font-semibold text-foreground flex items-center">
+                <div className="space-y-4 mt-4">
+                  <h4 className="font-semibold text-foreground flex items-center text-sm">
                     <Database className="h-4 w-4 mr-2" />
                     Project Metrics
                   </h4>
                   
-                  <div className="grid gap-4">
+                  <div className="grid grid-cols-3 gap-3">
                     {project.metrics.map((metric, metricIndex) => (
-                      <div key={metricIndex} className="bg-background/50 rounded-lg p-4 border border-border">
-                        <div className="text-2xl font-bold text-primary mb-1">
+                      <div key={metricIndex} className="bg-background/50 rounded-lg p-3 border border-border text-center">
+                        <div className="text-lg font-bold text-primary mb-1">
                           {metric.value}
                         </div>
-                        <div className="text-sm text-muted-foreground">
+                        <div className="text-xs text-muted-foreground">
                           {metric.label}
                         </div>
                       </div>
                     ))}
                   </div>
+                </div>
+
+                <div className="flex gap-2 mt-4">
+                  <Button size="sm" className="bg-gradient-primary hover:shadow-accent flex-1">
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    View Details
+                  </Button>
+                  <Button variant="outline" size="sm" className="flex-1">
+                    <FileSpreadsheet className="h-4 w-4 mr-2" />
+                    Docs
+                  </Button>
                 </div>
               </div>
             </Card>

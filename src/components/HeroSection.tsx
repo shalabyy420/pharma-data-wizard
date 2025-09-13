@@ -51,6 +51,14 @@ const HeroSection = () => {
                 variant="outline" 
                 size="lg"
                 className="hover:shadow-card transition-all duration-300"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/CV-Youssef-Magdi-Shalaby.pdf';
+                  link.download = 'CV-Youssef-Magdi-Shalaby.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download CV
@@ -70,13 +78,13 @@ const HeroSection = () => {
 
           <div className="mt-16 flex justify-center gap-6 animate-slide-up">
             <a 
-              href="mailto:youssef.magdi@example.com" 
+              href="mailto:shalabyy420@gmail.com" 
               className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform"
             >
               <Mail size={24} />
             </a>
             <a 
-              href="https://linkedin.com/in/youssef-magdi" 
+              href="https://linkedin.com/in/youssef-shalaby-45ab15244" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform"
